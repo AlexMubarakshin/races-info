@@ -1,6 +1,7 @@
 import React from 'react';
 import { Driver, getDriverName } from '../../../../store/models/drivers';
 import DetailedListItem from '../../../shared/DetailedListItem';
+import moment from 'moment';
 
 type DriverListItemProps = {
   driver: Driver;
@@ -16,7 +17,7 @@ const DriverListItem: React.FC<DriverListItemProps> = ({ driver, onPress }) => {
     <DetailedListItem
       title={getDriverName(driver)}
       subtitle={driver.nationality}
-      description={driver.dateOfBirth}
+      description={moment(driver.dateOfBirth).format('LL')}
       onPress={onPressHandle}
     />
   );

@@ -28,6 +28,7 @@ const ResultsView: React.FC<ResultsViewProps> = ({ race }) => {
             raceName={race.raceName}
             location={race.Circuit.Location.locality}
             country={race.Circuit.Location.country}
+            date={race.date}
           />
         )}
         data={race.Results}

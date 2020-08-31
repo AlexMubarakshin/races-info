@@ -1,5 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+
+import moment from 'moment';
+
 import { openURL } from '../../../utils/linking';
 
 const styles = StyleSheet.create({
@@ -33,9 +36,18 @@ type CircuitInfoProps = {
   raceUrl: string;
   location: string;
   country: string;
+  date: string;
 };
 
-const CircuitInfo: React.FC<CircuitInfoProps> = ({ location, raceName, country, raceUrl, circuitName, circuitUrl }) => {
+const CircuitInfo: React.FC<CircuitInfoProps> = ({
+  location,
+  raceName,
+  country,
+  raceUrl,
+  circuitName,
+  circuitUrl,
+  date,
+}) => {
   const onRaceLinkPress = React.useCallback(() => {
     openURL(raceUrl);
   }, [raceUrl]);
@@ -55,6 +67,7 @@ const CircuitInfo: React.FC<CircuitInfoProps> = ({ location, raceName, country, 
       </TouchableOpacity>
 
       <View>
+        <Text style={styles.subtitle}>{moment(date).format('LL')}</Text>
         <Text style={styles.subtitle}>{location}</Text>
         <Text style={styles.subtitle}>{country}</Text>
       </View>

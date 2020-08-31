@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import moment from 'moment';
+
 import { Race } from '../../../../store/models/races';
 
 const styles = StyleSheet.create({
@@ -37,7 +39,7 @@ const RaceInfoItem: React.FC<RaceInfoItemProps> = ({ race, onPress }) => {
     <TouchableOpacity onPress={onPressHandle}>
       <View style={styles.container}>
         <Text style={styles.title}>{race.raceName}</Text>
-        <Text style={styles.date}>{race.date}</Text>
+        <Text style={styles.date}>{moment(race.date).format('LL')}</Text>
       </View>
     </TouchableOpacity>
   );

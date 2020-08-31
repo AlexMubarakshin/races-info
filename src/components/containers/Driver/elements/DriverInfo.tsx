@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import moment from 'moment';
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
@@ -39,7 +41,7 @@ const DriverInfo: React.FC<DriverInfoProps> = ({ name, nationality, dateOfBirth 
     <View style={styles.icon} />
     <Text style={styles.title}>{name}</Text>
     <Text style={styles.subtitle}>{nationality}</Text>
-    <Text style={styles.subtitle}>{dateOfBirth}</Text>
+    <Text style={styles.subtitle}>{moment(dateOfBirth).format('LL')}</Text>
   </View>
 );
 
