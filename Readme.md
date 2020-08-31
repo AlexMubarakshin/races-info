@@ -13,15 +13,6 @@
        width="25%">
 </p>
 
-<p align="center">
-  <img src="./screenshots/drivers-screen_android.png" alt="Drivers list screen android"
-       width="25%">
-  <img src="./screenshots/driver-screen_android.png" alt="Driver details screen android"
-       width="25%">
-  <img src="./screenshots/results-screen_android.png" alt="Results details screen android"
-       width="25%">
-</p>
-
 ## Структура проекта
 
 ```txt
