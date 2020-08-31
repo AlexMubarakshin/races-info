@@ -22,7 +22,17 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 const Navigation = () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={ROUTES.DRIVERS}>
+    <Stack.Navigator
+      initialRouteName={ROUTES.DRIVERS}
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#fff',
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+        headerTintColor: '#000',
+      }}
+    >
       <Stack.Screen name={ROUTES.DRIVERS} component={DriversContainer} />
       <Stack.Screen name={ROUTES.DRIVER} component={DriverContainer} />
       <Stack.Screen name={ROUTES.RESULTS} component={ResultsContainer} />
