@@ -7,6 +7,7 @@ import { Race } from '../../../store/models/races';
 import DriverInfo from './elements/DriverInfo';
 import RaceInfoItem from './elements/RaceInfoItem';
 import Separator from '../../shared/Separator';
+import { Icons } from '../../../assets';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,7 +36,12 @@ const DriverView: React.FC<DriverViewProps> = ({
   <View style={styles.container}>
     <FlatList
       ListHeaderComponent={() => (
-        <DriverInfo name={getDriverName(driver)} nationality={driver.nationality} dateOfBirth={driver.dateOfBirth} />
+        <DriverInfo
+          name={getDriverName(driver)}
+          nationality={driver.nationality}
+          dateOfBirth={driver.dateOfBirth}
+          icon={Icons.helmet}
+        />
       )}
       data={results}
       keyExtractor={({ date, raceName, round }) => `${raceName}__${date}__${round}`}

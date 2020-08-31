@@ -2,6 +2,7 @@ import React from 'react';
 import { Driver, getDriverName } from '../../../../store/models/drivers';
 import DetailedListItem from '../../../shared/DetailedListItem';
 import moment from 'moment';
+import { Icons } from '../../../../assets';
 
 type DriverListItemProps = {
   driver: Driver;
@@ -19,6 +20,7 @@ const DriverListItem: React.FC<DriverListItemProps> = ({ driver, onPress }) => {
       subtitle={driver.nationality}
       description={moment(driver.dateOfBirth).format('LL')}
       onPress={onPressHandle}
+      icon={Icons.helmet}
     />
   );
 };

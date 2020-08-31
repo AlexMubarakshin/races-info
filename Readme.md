@@ -26,6 +26,8 @@
 
 ```txt
 src
+├── assets                           Asset'ы (Изображения и т.п)
+│
 ├── components                       Слой представления
 │   ├── containers                   View контейнеры
 │   │   ├── App.tsx
