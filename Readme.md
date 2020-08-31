@@ -5,11 +5,20 @@
 Получение списка гонщиков и их результатов с [Ergast Developer API](http://ergast.com/mrd/).
 
 <p align="center">
-  <img src="./screenshots/drivers-screen.png" alt="Drivers list screen"
+  <img src="./screenshots/drivers-screen_ios.png" alt="Drivers list screen ios"
        width="25%">
-  <img src="./screenshots/driver-screen.png" alt="Driver details screen"
+  <img src="./screenshots/driver-screen_ios.png" alt="Driver details screen ios"
        width="25%">
-  <img src="./screenshots/results-screen.png" alt="Results details screen"
+  <img src="./screenshots/results-screen_ios.png" alt="Results details screen ios"
+       width="25%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/drivers-screen_android.png" alt="Drivers list screen android"
+       width="25%">
+  <img src="./screenshots/driver-screen_android.png" alt="Driver details screen android"
+       width="25%">
+  <img src="./screenshots/results-screen_android.png" alt="Results details screen android"
        width="25%">
 </p>
 
@@ -67,3 +76,5 @@ $ yarn ios
 # Или для запуска на android
 $ yarn andriod
 ```
+
+Если запустить android сборку с помощью консоли не получилось, тогда попробуйте запустить используя `Android Studio`
