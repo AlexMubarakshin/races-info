@@ -1,7 +1,7 @@
 import { Location } from './location';
 
 export type Circuit = {
-  loaction: Location;
+  Location: Location;
   circuitId: string;
   circuitName: string;
   url: string;

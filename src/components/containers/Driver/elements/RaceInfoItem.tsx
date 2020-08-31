@@ -22,17 +22,25 @@ const styles = StyleSheet.create({
     color: 'rgba(0, 0, 0, 0.35)',
   },
 });
+
 type RaceInfoItemProps = {
   race: Race;
+  onPress: (race: Race) => void;
 };
 
-const RaceInfoItem: React.FC<RaceInfoItemProps> = ({ race }) => (
-  <TouchableOpacity>
-    <View style={styles.container}>
-      <Text style={styles.title}>{race.raceName}</Text>
-      <Text style={styles.date}>{race.date}</Text>
-    </View>
-  </TouchableOpacity>
-);
+const RaceInfoItem: React.FC<RaceInfoItemProps> = ({ race, onPress }) => {
+  const onPressHandle = React.useCallback(() => {
+    onPress(race);
+  }, [race, onPress]);
+
+  return (
+    <TouchableOpacity onPress={onPressHandle}>
+      <View style={styles.container}>
+        <Text style={styles.title}>{race.raceName}</Text>
+        <Text style={styles.date}>{race.date}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 export default RaceInfoItem;

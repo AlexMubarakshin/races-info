@@ -1,6 +1,7 @@
 export const ROUTES = {
   DRIVERS: 'Drivers',
   DRIVER: 'Driver',
+  RESULTS: 'Results',
 } as const;
 
 type ROUTES_TYPEOF = typeof ROUTES;

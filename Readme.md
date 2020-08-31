@@ -7,14 +7,15 @@
 <p align="center">
   <img src="./screenshots/drivers-screen.png" alt="Drivers list screen"
        width="25%">
-  <img src="./screenshots/driver-screen.png" alt="Drivers list screen"
+  <img src="./screenshots/driver-screen.png" alt="Driver details screen"
+       width="25%">
+  <img src="./screenshots/results-screen.png" alt="Results details screen"
        width="25%">
 </p>
 
-
 ## Структура проекта
 
-```md
+```txt
 src
 ├── components                       Слой представления
 │   ├── containers                   View контейнеры

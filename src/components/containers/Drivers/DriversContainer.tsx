@@ -10,10 +10,10 @@ import { RootStackParamList, ROUTES } from '../../navigation';
 import DriversView from './DriversView';
 import { Driver } from '../../../store/models/drivers';
 
-type DriversScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Drivers'>;
+type DriversContainerNavigationProp = StackNavigationProp<RootStackParamList, 'Drivers'>;
 
 type DriversContainerProps = {
-  navigation: DriversScreenNavigationProp;
+  navigation: DriversContainerNavigationProp;
 };
 
 const DriversContainer: React.FC<DriversContainerProps> = ({ navigation }) => {

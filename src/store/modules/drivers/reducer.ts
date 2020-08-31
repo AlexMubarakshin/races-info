@@ -42,12 +42,14 @@ export default function driversReducer(state = driversInitialState, action: Acti
     case DRIVERS_ACTIONS.LOAD_DRIVER_RESULTS_SUCCESS:
       const racesResponse = action.payload.data as RacesResponse;
       const newResults = racesResponse.MRData.RaceTable.Races;
-      const races: Race[] = state.isDriversReloading ? [...newResults] : [...state.driverResults.races, ...newResults];
+      const races: Race[] = state.isDriverRacesReloading
+        ? [...newResults]
+        : [...state.driverResults.races, ...newResults];
 
       return {
         ...state,
-        isDriversLoading: false,
-        isDriversReloading: false,
+        isDriverRacesLoading: false,
+        isDriverRacesReloading: false,
         driverResults: {
           races,
           driverId: racesResponse.MRData.RaceTable.driverId,
@@ -57,8 +59,8 @@ export default function driversReducer(state = driversInitialState, action: Acti
     case DRIVERS_ACTIONS.LOAD_DRIVER_RESULTS_FAIL:
       return {
         ...state,
-        isDriversLoading: false,
-        isDriversReloading: false,
+        isDriverRacesLoading: false,
+        isDriverRacesReloading: false,
       };
 
     default:

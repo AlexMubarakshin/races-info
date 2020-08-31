@@ -10,13 +10,13 @@ type ResultItemProps = {
 const ResultItem: React.FC<ResultItemProps> = ({ result }) => {
   return (
     <View>
-      <HorizontalListItem title={'Grid'} value={result.grid} />
-      <HorizontalListItem title={'Laps'} value={result.laps} />
-      <HorizontalListItem title={'Number'} value={result.number} />
-      <HorizontalListItem title={'Points'} value={result.points} />
+      <HorizontalListItem title={'Status'} value={result.status} />
       <HorizontalListItem title={'Position'} value={result.position} />
       <HorizontalListItem title={'PositionText'} value={result.positionText} />
-      <HorizontalListItem title={'Status'} value={result.status} />
+      <HorizontalListItem title={'Points'} value={result.points} />
+      <HorizontalListItem title={'Laps'} value={result.laps} />
+      <HorizontalListItem title={'Number'} value={result.number} />
+      <HorizontalListItem title={'Grid'} value={result.grid} />
     </View>
   );
 };
