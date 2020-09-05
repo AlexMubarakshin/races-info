@@ -31,6 +31,8 @@ const DriverContainer: React.FC<DriverContainerProps> = ({
   const dispatch = useDispatch();
 
   const results = useSelector((state: Store) => getResultsForDriver(state, driver.driverId));
+  const resultsError = useSelector((state: Store) => state.results.error);
+
   const isResultsLoading = useSelector((state: Store) => state.results.isResultsLoading);
   const isResultsRefreshing = useSelector((state: Store) => state.results.isResultsReloading);
 
@@ -61,6 +63,7 @@ const DriverContainer: React.FC<DriverContainerProps> = ({
     <DriverView
       isRefreshing={isResultsRefreshing}
       driver={driver}
+      error={resultsError}
       results={results}
       onRacePress={onRacePress}
       onRefresh={onRefresh}

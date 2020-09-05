@@ -10,6 +10,7 @@ export default function driversReducer(state = driversInitialState, action: Acti
     case DRIVERS_RESULTS_ACTIONS.LOAD_DRIVER_RESULTS:
       return {
         ...state,
+        error: undefined,
         isResultsLoading: true,
         isResultsReloading: action.payload.isNeedReload,
       };
@@ -21,6 +22,7 @@ export default function driversReducer(state = driversInitialState, action: Acti
 
       return {
         ...state,
+        error: undefined,
         isResultsLoading: false,
         isResultsReloading: false,
         results: {
@@ -32,6 +34,7 @@ export default function driversReducer(state = driversInitialState, action: Acti
     case DRIVERS_RESULTS_ACTIONS.LOAD_DRIVER_RESULTS_FAIL:
       return {
         ...state,
+        error: action.error,
         isResultsLoading: false,
         isResultsReloading: false,
       };

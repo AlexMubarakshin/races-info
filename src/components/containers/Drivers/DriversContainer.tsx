@@ -20,6 +20,7 @@ const DriversContainer: React.FC<DriversContainerProps> = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const drivers = useSelector((state: Store) => state.drivers.drivers);
+  const driversError = useSelector((state: Store) => state.drivers.error);
   const isDriversLoading = useSelector((state: Store) => state.drivers.isDriversLoading);
   const isDriversRefreshing = useSelector((state: Store) => state.drivers.isDriversReloading);
 
@@ -49,6 +50,7 @@ const DriversContainer: React.FC<DriversContainerProps> = ({ navigation }) => {
   return (
     <DriversView
       drivers={drivers}
+      error={driversError}
       isRefreshing={isDriversRefreshing}
       onDriverPress={onDriverPress}
       onRefresh={onRefresh}
