@@ -3,7 +3,6 @@ import { DRIVERS_ACTIONS } from './keys';
 import { DriversResponse, Driver } from '../../models/drivers';
 import { DriversState } from './reducer-types';
 import driversInitialState from './initial-state';
-import { RacesResponse, Race } from '../../models/races';
 
 export default function driversReducer(state = driversInitialState, action: Action): DriversState {
   switch (action.type) {
@@ -30,37 +29,6 @@ export default function driversReducer(state = driversInitialState, action: Acti
         ...state,
         isDriversReloading: false,
         isDriversLoading: false,
-      };
-
-    case DRIVERS_ACTIONS.LOAD_DRIVER_RESULTS:
-      return {
-        ...state,
-        isDriverRacesLoading: true,
-        isDriverRacesReloading: action.payload.isNeedReload,
-      };
-
-    case DRIVERS_ACTIONS.LOAD_DRIVER_RESULTS_SUCCESS:
-      const racesResponse = action.payload.data as RacesResponse;
-      const newResults = racesResponse.MRData.RaceTable.Races;
-      const races: Race[] = state.isDriverRacesReloading
-        ? [...newResults]
-        : [...state.driverResults.races, ...newResults];
-
-      return {
-        ...state,
-        isDriverRacesLoading: false,
-        isDriverRacesReloading: false,
-        driverResults: {
-          races,
-          driverId: racesResponse.MRData.RaceTable.driverId,
-        },
-      };
-
-    case DRIVERS_ACTIONS.LOAD_DRIVER_RESULTS_FAIL:
-      return {
-        ...state,
-        isDriverRacesLoading: false,
-        isDriverRacesReloading: false,
       };
 
     default:

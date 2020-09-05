@@ -2,6 +2,7 @@ import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 
 import { Race } from '../../../store/models/races';
+
 import CircuitInfo from './elements/CircuitInfo';
 import ResultItem from './elements/ResultItem';
 

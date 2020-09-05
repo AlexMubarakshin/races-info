@@ -3,14 +3,16 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Store } from '../../../store/types/Store';
-
-import { getResultsForDriver } from '../../../store/modules/drivers/selectors';
 import { RootStackParamList, ROUTES } from '../../navigation';
 
-import DriverView from './DriverView';
-import { getDriverResults } from '../../../store/modules/drivers/actions';
+import { Store } from '../../../store/types/Store';
+
+import { getDriverResults } from '../../../store/modules/results/actions';
+import { getResultsForDriver } from '../../../store/modules/results/selectors';
+
 import { Race } from '../../../store/models/races';
+
+import DriverView from './DriverView';
 
 type DriverContainerRouteProp = RouteProp<RootStackParamList, 'Driver'>;
 type DriverContainerNavigationProp = StackNavigationProp<RootStackParamList, 'Driver'>;
@@ -29,8 +31,8 @@ const DriverContainer: React.FC<DriverContainerProps> = ({
   const dispatch = useDispatch();
 
   const results = useSelector((state: Store) => getResultsForDriver(state, driver.driverId));
-  const isResultsLoading = useSelector((state: Store) => state.drivers.isDriverRacesLoading);
-  const isResultsRefreshing = useSelector((state: Store) => state.drivers.isDriverRacesReloading);
+  const isResultsLoading = useSelector((state: Store) => state.results.isResultsLoading);
+  const isResultsRefreshing = useSelector((state: Store) => state.results.isResultsReloading);
 
   React.useEffect(() => {
     dispatch(getDriverResults({ driverId: driver.driverId, offset: 0, isNeedReload: true }));

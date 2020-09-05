@@ -2,12 +2,13 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
-import { API_URL } from '../config/api';
+import API_ENDPOINTS from '../config/api';
+
 import createReducers from './reducer';
 
 export default function configureStore() {
   const client = axios.create({
-    baseURL: API_URL,
+    baseURL: API_ENDPOINTS.BASE_API_URL,
     responseType: 'json',
   });
 
