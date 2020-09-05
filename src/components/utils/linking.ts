@@ -5,6 +5,6 @@ export const openURL = (url: string) =>
     if (supported) {
       Linking.openURL(url);
     } else {
-      console.log("Don't know how to open URI: " + url);
+      throw new Error("Don't know how to open URI: " + url);
     }
   });

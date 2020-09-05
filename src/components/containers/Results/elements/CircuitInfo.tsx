@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Alert, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 import moment from 'moment';
 
+import log from '../../../../utils/logger';
 import { openURL } from '../../../utils/linking';
 
 const styles = StyleSheet.create({
@@ -49,11 +50,17 @@ const CircuitInfo: React.FC<CircuitInfoProps> = ({
   date,
 }) => {
   const onRaceLinkPress = React.useCallback(() => {
-    openURL(raceUrl);
+    openURL(raceUrl).catch((err) => {
+      log.error(err);
+      Alert.alert('Sorry, race link opening error.');
+    });
   }, [raceUrl]);
 
   const onCircuitLinkPress = React.useCallback(() => {
-    openURL(circuitUrl);
+    openURL(circuitUrl).catch((err) => {
+      log.error(err);
+      Alert.alert('Sorry, circuit link opening error.');
+    });
   }, [circuitUrl]);
 
   return (
